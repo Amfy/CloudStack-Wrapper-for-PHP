@@ -419,6 +419,309 @@ class cloudStack
         $command       = $this->_handleArray($command_array);
         return $this->_apiRequest($command);
     }
+
+    /* Start Network Methods */
+    
+    public function listNetworkOfferings($availability = null, $displaytext = null, $forvpc = null, $guestiptype = null, $id = null, $isdefault = null, $istagged = null, $keyword = null, $name = null, $networkid = null, $page = null, $pagesize = null, $sourcenatsupported = null, $specifyipranges = null, $specifyvlan = null, $state = null, $supportedservices = null, $tags = null, $traffictype = null, $zoneid = null) {
+        $command_array = array(
+            'command' => 'listNetworkOfferings',
+            'availability' => $availability,
+            'displaytext' => $displaytext,
+            'forvpc' => $forvpc,
+            'guestiptype' => $guestiptype,
+            'id' => $id,
+            'isdefault' => $isdefault,
+            'istagged' => $istagged,
+            'keyword' => $keyword,
+            'name' => $name,
+            'networkid' => $networkid,
+            'page' => $page,
+            'pagesize' => $pagesize,
+            'sourcenatsupported' => $sourcenatsupported,
+            'specifyvlan' => $specifyvlan,
+            'state' => $state,
+            'supportedservices' => $supportedservices,
+            'tags' => $tags,
+            'traffictype' => $traffictype,
+            'zoneid' => $zoneid,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    public function createNetwork($displaytext, $name, $networkofferingid, $zoneid, $account = null, $acltype = null, $domainid = null, $endip = null, $endipv6 = null, $gateway = null, $ip6cidr = null, $ip6gateway = null, $netmask = null, $networkdomain = null, $physicalnetworkid = null, $projectid = null, $startip = null, $startipv6 = null, $subdomainaccess = null, $vlan = null, $vpcid = null) {
+    	$command_array = array(
+            'command' => 'createNetwork',
+            'displaytext' => $displaytext,
+            'name' => $name,
+            'networkofferingid' => $networkofferingid,
+            'zoneid' => $zoneid,
+            'account' => $account,
+            'acltype' => $acltype,
+            'domainid' => $domainid,
+            'endip' => $endip,
+            'endipv6' => $endipv6,
+            'gateway' => $gateway,
+            'ip6cidr' => $ip6cidr,
+            'ip6gateway' => $ip6gateway,
+            'netmask' => $netmask,
+            'networkdomain' => $networkdomain,
+            'physicalnetworkid' => $physicalnetworkid,
+            'projectid' => $projectid,
+            'startip' => $startip,
+            'startipv6' => $startipv6,
+            'subdomainaccess' => $subdomainaccess,
+            'vlan' => $vlan,
+            'vpcid' => $vpcid,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);    	
+    }
+
+    public function deleteNetwork($id) {
+    	$command_array = array(
+            'command' => 'deleteNetwork',
+            'id' => $id,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    public function listNetworks($account = null, $acltype = null, $canusefordeploy = null, $domainid = null, $forvpc = null, $id = null, $isrecursive = null, $issystem = null, $keyword = null, $listall = null, $page = null, $pagesize = null, $physicalnetworkid = null, $projectid = null, $restartrequired = null, $specifyipranges = null, $supportedservices = null, $tags = null, $traffictype = null, $type = null, $vpcid = null, $zoneid = null) {
+        $command_array = array(
+            'command' => 'listNetworks',
+            'account' => $account,
+            'acltype' => $acltype,
+            'canusefordeploy' => $canusefordeploy,
+            'domainid' => $domainid,
+            'forvpc' => $forvpc,
+            'id' => $id,
+            'isrecursive' => $isrecursive,
+            'issystem' => $issystem,
+            'keyword' => $keyword,
+            'listall' => $listall,
+            'page' => $page,
+            'pagesize' => $pagesize,
+            'physicalnetworkid' => $physicalnetworkid,
+            'projectid' => $projectid,
+            'restartrequired' => $restartrequired,
+            'specifyipranges' => $specifyipranges,
+            'supportedservices' => $supportedservices,
+            'tags' => $tags,
+            'traffictype' => $traffictype,
+            'type' => $type,
+            'vpcid' => $vpcid,
+            'zoneid' => $zoneid,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    public function restartNetwork($id, $cleanup = null) {
+    	$command_array = array(
+            'command' => 'restartNetwork',
+            'id' => $id,
+            'cleanup' => $cleanup,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    public function updateNetwork($id, $changecidr = null, $displaytext = null, $name = null, $networkdomain = null, $networkofferingid = null) {
+    	$command_array = array(
+            'command' => 'updateNetwork',
+            'id' => $id,
+            'changecidr' => $changecidr,
+            'displaytext' => $displaytext,
+            'name' => $name,
+            'networkdomain' => $networkdomain,
+            'networkofferingid' => $networkofferingid,
+            'cleanup' => $cleanup,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);    	
+    }
+
+    public function createNetworkACL($networkid, $protocol, $cidrlist = null, $endport = null, $icmpcode = null, $icmptype = null, $startport = null, $traffictype = null) {
+    	$command_array = array(
+            'command' => 'createNetworkACL',
+            'networkid' => $networkid,
+            'protocol' => $protocol,
+            'cidrlist' => $cidrlist,
+            'endport' => $endport,
+            'icmpcode' => $icmpcode,
+            'icmptype' => $icmptype,
+            'startport' => $startport,
+            'traffictype' => $traffictype,
+            'cleanup' => $cleanup,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    public function deleteNetworkACL($id) {
+    	$command_array = array(
+            'command' => 'deleteNetworkACL',
+            'id' => $id,
+            'cleanup' => $cleanup,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    public function listNetworkACLs($account = null, $domainid = null, $id = null, $isrecursive = null, $keyword = null, $listall = null, $networkid = null, $page = null, $pagesize = null, $projectid = null, $tags = null, $traffictype = null) {
+    	$command_array = array(
+            'command' => 'listNetworkACLs',
+            'account' => $account,
+            'domainid' => $domainid,
+            'id' => $id,
+            'isrecursive' => $isrecursive,
+            'keyword' => $keyword,
+            'listall' => $listall,
+            'networkíd' => $networkid,
+            'page' => $page,
+            'pagesize' => $pagesize,
+            'projectid' => $projectid,
+            'tags' => $tags,
+            'traffictype' => $traffictype,
+            'cleanup' => $cleanup,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    /* End Network Methods */
+
+    /* Start Group Methods */
+
+    public function createInstanceGroup($name, $account = null, $domainid = null, $projectid = null) {
+		$command_array = array(
+            'command' => 'createInstanceGroup',
+            'name' => $name,
+            'account' => $account,
+            'domainid' => $domainid,
+            'projectid' => $projectid,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);    	
+    }
+
+    public function deleteInstanceGroup($id) {
+    	$command_array = array(
+            'command' => 'deleteInstanceGroup',
+            'id' => $id,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    public function updateInstanceGroup($id, $name = null) {
+    	$command_array = array(
+            'command' => 'updateInstanceGroup',
+            'id' => $id,
+            'name' => $name,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    public function listInstanceGroups($account = null, $domainid = null, $id = null, $isrecursive = null, $keyword = null, $listall = null, $name = null, $page = null, $pagesize = null, $projectid = null) {
+    	$command_array = array(
+            'command' => 'listInstanceGroups',
+            'account' => $account,
+            'domainid' => $domainid,
+            'id' => $id,
+            'isrecursive' => $isrecursive,
+            'keyword' => $keyword,
+            'listall' => $listall,
+            'name' => $name,
+            'page' => $page,
+            'pagesize' => $pagesize,
+            'projectid' => $projectid,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+    }
+
+    /* End Group Methods */
+
+    /* Start SSH Methods */
+
+	public function createSSHKeyPair($name, $account = null, $domainid = null, $projectid = null) {
+		$command_array = array(
+            'command' => 'createSSHKeyPair',
+            'name' => $name,
+            'account' => $account,
+            'domainid' => $domainid,
+            'projectid' => $projectid,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+	}
+
+	public function deleteSSHKeyPair($name, $account = null, $domainid = null, $projectid = null) {
+		$command_array = array(
+            'command' => 'deleteSSHKeyPair',
+            'name' => $name,
+            'account' => $account,
+            'domainid' => $domainid,
+            'projectid' => $projectid,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+	}
+
+	public function listSSHKeyPairs($account = null, $domainid = null, $fingerprint = null, $isrecursive = null, $keyword = null, $listall = null, $name = null, $page = null, $pagesize = null, $projectid = null) {
+		$command_array = array(
+            'command' => 'deleteSSHKeyPair',
+            'account' => $account,
+            'domainid' => $domainid,
+            'fingerprint' => $fingerprint,
+            'isrecursive' => $isrecursive,
+            'keyword' => $keyword,
+            'listall' => $listall,
+            'name' => $name,
+            'page' => $page,
+            'pagesize' => $pagesize,
+            'projectid' => $projectid,
+            'response' => $this->responseType
+            );
+        $command_array = array_filter($command_array);
+        $command       = $this->_handleArray($command_array);
+        return $this->_apiRequest($command);
+	}
+
+	/* End SSH Methods */
     
     protected function _signRequest($apiRequest)
     {
@@ -459,7 +762,7 @@ class cloudStack
                 } else {
                     $response = $response;
                 }
-                return $response;
+                return json_decode($response);
             }
         }
     }
